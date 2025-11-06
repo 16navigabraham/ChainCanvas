@@ -1,91 +1,104 @@
-# ChainCanvas
+# ChainCanvas - NFT Viewer
 
-![ChainCanvas Banner](https://placehold.co/1200x600/1a1a1a/ffffff/png?text=ChainCanvas)
+This is a React application that allows users to view their NFTs on the Base mainnet. It uses the Alchemy API to fetch NFT data and displays it in a user-friendly gallery format.
 
-**ChainCanvas** is a modern, cross-chain NFT gallery and marketplace built on the Base network. It provides a seamless user experience for exploring and managing NFTs, featuring an AI-powered gas optimization tool to help users save on transaction fees. Wallet connectivity is powered by the **Reown AppKit**, offering support for multiple popular wallets.
+## Getting Started
 
-## ✨ Features
-
-- **🖼️ NFT Marketplace Gallery**: A beautiful, responsive gallery to browse and filter NFTs.
-- **🔗 Multi-Chain Asset Display**: View NFTs from various chains, including Base, Ethereum, Polygon, and Optimism.
-- **🤖 AI-Powered Gas Optimizer**: An intelligent tool that analyzes pending transactions and suggests batching opportunities to reduce gas costs.
-- **🔒 Secure Wallet Integration**: Robust and secure multi-wallet support (MetaMask, Coinbase Wallet, WalletConnect, Rainbow) powered by **Reown AppKit**.
-- **🌐 SSR Ready**: Built with Next.js App Router for optimal performance and server-side rendering.
-
-## 🛠️ Tech Stack
-
-- **Framework**: [Next.js](https://nextjs.org/) (App Router)
-- **Language**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [ShadCN UI](https://ui.shadcn.com/)
-- **Web3 Integration**: [Reown AppKit](https://docs.reown.com/appkit) with [Wagmi](https://wagmi.sh/)
-- **Generative AI**: [Firebase Genkit](https://firebase.google.com/docs/genkit)
-- **Deployment**: Firebase App Hosting
-
-## 🚀 Getting Started
-
-Follow these instructions to set up and run the project on your local machine.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/en/) (v18 or later)
-- [npm](https://www.npmjs.com/), [yarn](https://yarnpkg.com/), or [pnpm](https://pnpm.io/) package manager
+* Node.js and npm (or yarn)
+* An Alchemy API key
 
-### 1. Environment Variables
+### Installation
 
-Before you can run the application, you need to set up your environment variables. This project uses Reown AppKit for wallet connections, which requires a Project ID.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/chain-canvas.git
+   ```
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-1.  Create a `.env` file in the root of the project.
-2.  Add your Reown Project ID to the file:
+### Configuration
 
-    ```.env
-    NEXT_PUBLIC_PROJECT_ID="YOUR_REOWN_PROJECT_ID"
-    ```
+1. Create a `.env` file in the root of the project.
+2. Add your Alchemy API key to the `.env` file:
+   ```
+   NEXT_PUBLIC_ALCHEMY_API_KEY="YOUR_API_KEY"
+   ```
+   Replace `"YOUR_API_KEY"` with your actual Alchemy API key.
 
-    You can get a Project ID by creating a new project on the [Reown Dashboard](https://dashboard.reown.com).
+## Available Scripts
 
-### 2. Installation
+In the project directory, you can run:
 
-Install the project dependencies using your preferred package manager:
+* `npm run dev`: Runs the app in the development mode.
+* `npm run build`: Builds the app for production to the `build` folder.
+* `npm run start`: Starts the production server.
+* `npm run lint`: Lints the code.
+* `npm run typecheck`: Type-checks the code.
 
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-```
+## Dependencies
 
-### 3. Running the Development Server
+* **@genkit-ai/google-genai:** ^1.20.0
+* **@genkit-ai/next:** ^1.20.0
+* **@hookform/resolvers:** ^4.1.3
+* **@radix-ui/react-accordion:** ^1.2.3
+* **@radix-ui/react-alert-dialog:** ^1.1.6
+* **@radix-ui/react-avatar:** ^1.1.3
+* **@radix-ui/react-checkbox:** ^1.1.4
+* **@radix-ui/react-collapsible:** ^1.1.11
+* **@radix-ui/react-dialog:** ^1.1.6
+* **@radix-ui/react-dropdown-menu:** ^2.1.6
+* **@radix-ui/react-label:** ^2.1.2
+* **@radix-ui/react-menubar:** ^1.1.6
+* **@radix-ui/react-popover:** ^1.1.6
+* **@radix-ui/react-progress:** ^1.1.2
+* **@radix-ui/react-radio-group:** ^1.2.3
+* **@radix-ui/react-scroll-area:** ^1.2.3
+* **@radix-ui/react-select:** ^2.1.6
+* **@radix-ui/react-separator:** ^1.1.2
+* **@radix-ui/react-slider:** ^1.2.3
+* **@radix-ui/react-slot:** ^1.2.3
+* **@radix-ui/react-switch:** ^1.1.3
+* **@radix-ui/react-tabs:** ^1.1.3
+* **@radix-ui/react-toast:** ^1.2.6
+* **@radix-ui/react-tooltip:** ^1.1.8
+* **@reown/appkit:** ^1.3.1
+* **@reown/appkit-adapter-wagmi:** ^1.2.0
+* **@tanstack/react-query:** ^5.51.15
+* **class-variance-authority:** ^0.7.1
+* **clsx:** ^2.1.1
+* **date-fns:** ^3.6.0
+* **dotenv:** ^16.5.0
+* **embla-carousel-react:** ^8.6.0
+* **ethers:** ^5.7.2
+* **firebase:** ^11.9.1
+* **genkit:** ^1.20.0
+* **lucide-react:** ^0.475.0
+* **next:** 15.3.3
+* **patch-package:** ^8.0.0
+* **react:** ^18.3.1
+* **react-day-picker:** ^8.10.1
+* **react-dom:** ^18.3.1
+* **react-hook-form:** ^7.54.2
+* **recharts:** ^2.15.1
+* **tailwind-merge:** ^3.0.1
+* **tailwindcss-animate:** ^1.0.7
+* **viem:** ^2.18.2
+* **wagmi:** ^2.12.1
+* **zod:** ^3.24.2
 
-Once the dependencies are installed, you can start the development server:
+## Dev Dependencies
 
-```bash
-npm run dev
-```
-
-The application will be available at [http://localhost:9002](http://localhost:9002). The page will auto-update as you edit the source files.
-
-## 📜 Available Scripts
-
-- `npm run dev`: Starts the development server with Turbopack.
-- `npm run build`: Creates a production-ready build of the application.
-- `npm run start`: Starts the production server.
-- `npm run lint`: Lints the codebase for errors and style issues.
-- `npm run typecheck`: Runs the TypeScript compiler to check for type errors.
-
-## 📁 Project Structure
-
-Here is a brief overview of the key directories in the project:
-
-- `src/app/`: Contains the main application routes and pages, following the Next.js App Router structure.
-- `src/components/`: Reusable React components, including UI elements from ShadCN.
-- `src/ai/`: Home to the Genkit flows that power the AI features, like the Gas Optimizer.
-- `src/lib/`: Shared utilities, data fetching logic, and type definitions.
-- `src/config/`: Configuration for third-party services, such as the Reown AppKit.
-- `src/context/`: React context providers, like the `Web3Provider`.
-- `public/`: Static assets like images and fonts.
-
----
-
-Happy building!
+* **@react-native-async-storage/async-storage:** ^2.2.0
+* **@types/node:** ^20
+* **@types/react:** ^18
+* **@types/react-dom:** ^18
+* **genkit-cli:** ^1.20.0
+* **postcss:** ^8
+* **tailwindcss:** ^3.4.1
+* **typescript:** ^5
