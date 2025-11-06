@@ -8,7 +8,7 @@ import { Skeleton } from './ui/skeleton';
 
 const alchemyApiKey = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY;
 
-async function fetchBaseNFTs(walletAddress: string, apiKey: string) {
+async function fetchBaseNFTs(walletAddress: string, apiKey: string): Promise<NFT[]> {
   const url = `https://base-mainnet.g.alchemy.com/nft/v3/${apiKey}/getNFTsForOwner?owner=${walletAddress}&withMetadata=true&pageSize=100`;
 
   const response = await fetch(url, {
@@ -21,7 +21,23 @@ async function fetchBaseNFTs(walletAddress: string, apiKey: string) {
   }
 
   const data = await response.json();
-  return data.ownedNfts;
+  // Transform the Alchemy API response to match the NFT type
+  return data.ownedNfts.map((nft: any) => ({
+    id: nft.tokenId,
+    name: nft.name,
+    collection: nft.collection?.name || 'Unknown Collection',
+    chain: 'Base',
+    price: 0, // Alchemy API doesn't provide price data
+    image: {
+      imageUrl: nft.image.cachedUrl,
+      imageHint: ''
+    },
+    contract: {
+      address: nft.contract.address
+    },
+    tokenId: nft.tokenId,
+  }));
+
 }
 
 export function NftGallery() {
