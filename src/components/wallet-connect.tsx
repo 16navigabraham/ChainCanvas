@@ -10,17 +10,27 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Wallet, LogOut, Copy, ChevronDown } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { formatEther } from 'viem';
+import { useState } from 'react';
 
 export function WalletConnect() {
-  const { address, isConnected, connector } = useAccount();
+  const { address, isConnected } = useAccount();
   const { connectors, connect } = useConnect();
   const { disconnect } = useDisconnect();
   const { data: balance } = useBalance({ address });
   const { toast } = useToast();
+  const [open, setOpen] = useState(false);
 
   const shortAddress = address ? `${address.slice(0, 6)}...${address.slice(-4)}` : '';
 
@@ -36,24 +46,37 @@ export function WalletConnect() {
 
   if (!isConnected) {
     return (
-      <DropdownMenu>
-        <DropdownMenuTrigger asChild>
+       <Dialog open={open} onOpenChange={setOpen}>
+        <DialogTrigger asChild>
           <Button>
             <Wallet />
             Connect Wallet
           </Button>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-           {connectors.map((connector) => (
-            <DropdownMenuItem
-              key={connector.id}
-              onClick={() => connect({ connector })}
-            >
-              {connector.name}
-            </DropdownMenuItem>
-          ))}
-        </DropdownMenuContent>
-      </DropdownMenu>
+        </DialogTrigger>
+        <DialogContent className="sm:max-w-[425px]">
+          <DialogHeader>
+            <DialogTitle>Connect your wallet</DialogTitle>
+            <DialogDescription>
+              Select your preferred wallet to connect to ChainCanvas.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="grid gap-4 py-4">
+             {connectors.filter(c => c.name !== 'Injected').map((connector) => (
+              <Button
+                key={connector.id}
+                onClick={() => {
+                    connect({ connector });
+                    setOpen(false);
+                }}
+                variant="outline"
+                className='h-14 text-lg'
+              >
+                {connector.name}
+              </Button>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
     );
   }
 
