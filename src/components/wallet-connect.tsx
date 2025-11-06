@@ -24,8 +24,32 @@ import { useToast } from '@/hooks/use-toast';
 import { formatEther } from 'viem';
 import { useState } from 'react';
 
+// A helper component to render wallet icons
+const WalletIcon = ({ name }: { name: string }) => {
+    const icons: {[key: string]: string} = {
+        'MetaMask': 'https://upload.wikimedia.org/wikipedia/commons/3/36/MetaMask_Fox.svg',
+        'Coinbase Wallet': 'https://images.ctfassets.net/c5bd0wqjc7v0/3h5jD9jdU62i2a81c8y46y/4b935d88817a0b8332a67a030076c8c1/coinbase-wallet-icon.svg',
+        'WalletConnect': 'https://walletconnect.com/walletconnect-logo.svg',
+        'Rainbow': 'https://rainbow.me/favicon.ico',
+        'Injected': 'lucide:syringe'
+    }
+
+    if (name in icons) {
+         if (icons[name].startsWith('lucide:')) {
+            const lucideName = icons[name].split(':')[1];
+            const LucideIcon = require('lucide-react')[lucideName] || Wallet;
+            return <LucideIcon className="h-8 w-8" />
+        }
+        // eslint-disable-next-line @next/next/no-img-element
+        return <img src={icons[name]} alt={`${name} logo`} className="h-8 w-8" />
+    }
+
+    return <Wallet className="h-8 w-8" />;
+};
+
+
 export function WalletConnect() {
-  const { address, isConnected } = useAccount();
+  const { address, isConnected, connector } = useAccount();
   const { connectors, connect } = useConnect();
   const { disconnect } = useDisconnect();
   const { data: balance } = useBalance({ address });
@@ -57,21 +81,22 @@ export function WalletConnect() {
           <DialogHeader>
             <DialogTitle className="text-center text-2xl font-headline">Connect your wallet</DialogTitle>
             <DialogDescription className="text-center">
-              Choose your preferred wallet to continue
+              Choose your preferred wallet provider to continue
             </DialogDescription>
           </DialogHeader>
           <div className="flex flex-col space-y-3 pt-4">
-             {connectors.filter(c => c.name !== 'Injected').map((connector) => (
+             {connectors.map((c) => (
               <Button
-                key={connector.id}
+                key={c.id}
                 onClick={() => {
-                    connect({ connector });
+                    connect({ connector: c });
                     setOpen(false);
                 }}
                 variant="outline"
-                className='h-16 text-lg justify-start px-6 rounded-xl hover:bg-primary/10'
+                className='h-16 text-lg justify-start px-6 rounded-xl hover:bg-primary/10 flex items-center gap-4'
               >
-                {connector.name}
+                <WalletIcon name={c.name} />
+                <span>{c.name}</span>
               </Button>
             ))}
           </div>
@@ -80,20 +105,35 @@ export function WalletConnect() {
     );
   }
 
+  const ConnectedWalletIcon = () => {
+    if (connector?.name) {
+      return <WalletIcon name={connector.name} />;
+    }
+    return <AvatarImage src={`https://picsum.photos/seed/${address}/32/32`} />;
+  }
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" className="flex items-center gap-2">
-          <Avatar className="h-6 w-6">
-            <AvatarImage src={`https://picsum.photos/seed/${address}/32/32`} />
+        <Button variant="outline" className="flex items-center gap-2 pr-2">
+          <Avatar className="h-7 w-7">
+            <ConnectedWalletIcon />
             <AvatarFallback>CC</AvatarFallback>
           </Avatar>
-          <span className="hidden md:inline">{shortAddress}</span>
+          <div className="flex flex-col items-start">
+            <span className="text-xs font-bold leading-tight">{shortAddress}</span>
+             <span className="text-xs text-muted-foreground leading-tight">
+                {balance ? `${parseFloat(formatEther(balance.value)).toFixed(4)} ${balance.symbol}` : '...'}
+             </span>
+          </div>
           <ChevronDown className="h-4 w-4" />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent align="end" className="w-56">
-        <DropdownMenuLabel>My Wallet</DropdownMenuLabel>
+      <DropdownMenuContent align="end" className="w-60">
+        <DropdownMenuLabel className='flex flex-col'>
+            <span>My Wallet</span>
+            <span className='text-xs text-muted-foreground font-normal'>{connector?.name}</span>
+        </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <div className="px-2 py-1.5 text-sm">
           <p className="font-medium">Balance</p>
@@ -106,7 +146,7 @@ export function WalletConnect() {
           <span>Copy Address</span>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={() => disconnect()} className="text-destructive">
+        <DropdownMenuItem onClick={() => disconnect()} className="text-destructive focus:text-destructive-foreground focus:bg-destructive">
           <LogOut className="mr-2 h-4 w-4" />
           <span>Disconnect</span>
         </DropdownMenuItem>
