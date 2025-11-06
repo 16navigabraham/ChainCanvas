@@ -1,3 +1,124 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "nft1",
+      "description": "Abstract colorful orb",
+      "imageUrl": "https://images.unsplash.com/photo-1762341154403-7072ac1f6906?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxhYnN0cmFjdCUyMG9yYnxlbnwwfHx8fDE3NjI0MzQwNTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract orb"
+    },
+    {
+      "id": "nft2",
+      "description": "Geometric crystal structure",
+      "imageUrl": "https://images.unsplash.com/photo-1650557299761-3720d851db79?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxnZW9tZXRyaWMlMjBjcnlzdGFsfGVufDB8fHx8MTc2MjQ1OTA4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "geometric crystal"
+    },
+    {
+      "id": "nft3",
+      "description": "Floating cybernetic city",
+      "imageUrl": "https://images.unsplash.com/photo-1593376893114-1aed528d80cf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxjeWJlcm5ldGljJTIwY2l0eXxlbnwwfHx8fDE3NjI0NTkwODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cybernetic city"
+    },
+    {
+      "id": "nft4",
+      "description": "Neon data stream",
+      "imageUrl": "https://images.unsplash.com/photo-1638237949458-559055af3857?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxuZW9uJTIwc3RyZWFtfGVufDB8fHx8MTc2MjQ1OTA4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "neon stream"
+    },
+    {
+      "id": "nft5",
+      "description": "Galactic nebula",
+      "imageUrl": "https://images.unsplash.com/photo-1755167611440-3812d81aa757?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxnYWxhY3RpYyUyMG5lYnVsYXxlbnwwfHx8fDE3NjI0NTkwODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "galactic nebula"
+    },
+    {
+      "id": "nft6",
+      "description": "Digital consciousness render",
+      "imageUrl": "https://images.unsplash.com/photo-1660742483171-4ae3b5fc7d13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkaWdpdGFsJTIwY29uc2Npb3VzbmVzc3xlbnwwfHx8fDE3NjI0NTkwODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "digital consciousness"
+    },
+    {
+      "id": "nft7",
+      "description": "Holographic landscape",
+      "imageUrl": "https://images.unsplash.com/photo-1634331420365-1169ce1dd438?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxob2xvZ3JhcGhpYyUyMGxhbmRzY2FwZXxlbnwwfHx8fDE3NjI0NTkwODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "holographic landscape"
+    },
+    {
+      "id": "nft8",
+      "description": "Quantum entanglement visualization",
+      "imageUrl": "https://images.unsplash.com/photo-1755456068187-c2f56ad73d09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxxdWFudHVtJTIwdmlzdWFsaXphdGlvbnxlbnwwfHx8fDE3NjI0NTkwODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "quantum visualization"
+    },
+    {
+      "id": "nft9",
+      "description": "Robotic flora",
+      "imageUrl": "https://images.unsplash.com/photo-1634912314704-c646c586b131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxyb2JvdGljJTIwZmxvcmF8ZW58MHx8fHwxNzYyNDU5MDg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "robotic flora"
+    },
+    {
+      "id": "nft10",
+      "description": "Singularity event horizon",
+      "imageUrl": "https://picsum.photos/seed/10/500/500",
+      "imageHint": "singularity horizon"
+    },
+    {
+      "id": "nft11",
+      "description": "Liquid metal sculpture",
+      "imageUrl": "https://images.unsplash.com/photo-1746422125977-7a5a63f052e7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxsaXF1aWQlMjBzY3VscHR1cmV8ZW58MHx8fHwxNzYyNDU5MDg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "liquid sculpture"
+    },
+    {
+      "id": "nft12",
+      "description": "Soundwave pattern",
+      "imageUrl": "https://images.unsplash.com/photo-1744907530116-024c06df40bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzb3VuZHdhdmUlMjBwYXR0ZXJufGVufDB8fHx8MTc2MjQ1OTA4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "soundwave pattern"
+    },
+    {
+      "id": "nft13",
+      "description": "Ethereal architecture",
+      "imageUrl": "https://images.unsplash.com/photo-1711972014132-cb822822192a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxldGhlcmVhbCUyMGFyY2hpdGVjdHVyZXxlbnwwfHx8fDE3NjI0NTkwODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ethereal architecture"
+    },
+    {
+      "id": "nft14",
+      "description": "Chrono-crystal",
+      "imageUrl": "https://images.unsplash.com/photo-1677249490921-3246e81f19e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjaHJvbm8lMjBjcnlzdGFsfGVufDB8fHx8MTc2MjQ1OTA4NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "chrono crystal"
+    },
+    {
+      "id": "nft15",
+      "description": "AI-dreamed landscape",
+      "imageUrl": "https://images.unsplash.com/photo-1638108820168-77c13bd437bd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxkcmVhbWVkJTIwbGFuZHNjYXBlfGVufDB8fHx8MTc2MjQ1OTA4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "dreamed landscape"
+    },
+    {
+      "id": "nft16",
+      "description": "Void walker",
+      "imageUrl": "https://images.unsplash.com/photo-1555252066-f6ee20005f5b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8dm9pZCUyMHdhbGtlcnxlbnwwfHx8fDE3NjI0NTkwODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "void walker"
+    },
+    {
+      "id": "nft17",
+      "description": "Aether stream",
+      "imageUrl": "https://images.unsplash.com/photo-1569950593987-7bc554988425?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxhZXRoZXIlMjBzdHJlYW18ZW58MHx8fHwxNzYyNDU5MDg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "aether stream"
+    },
+    {
+      "id": "nft18",
+      "description": "Neural network bloom",
+      "imageUrl": "https://images.unsplash.com/photo-1665492247709-6c7f61531925?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxuZXVyYWwlMjBibG9vbXxlbnwwfHx8fDE3NjI0NTkwODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "neural bloom"
+    },
+    {
+      "id": "nft19",
+      "description": "Cosmic string",
+      "imageUrl": "https://images.unsplash.com/photo-1661719498625-af4dcba4e216?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxjb3NtaWMlMjBzdHJpbmd8ZW58MHx8fHwxNzYyNDU5MDg0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "cosmic string"
+    },
+    {
+      "id": "nft20",
+      "description": "Fractal pyramid",
+      "imageUrl": "https://images.unsplash.com/photo-1588189840085-b26508369a0d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxmcmFjdGFsJTIwcHlyYW1pZHxlbnwwfHx8fDE3NjI0NTkwODR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "fractal pyramid"
+    }
+  ]
 }
