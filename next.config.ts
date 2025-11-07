@@ -28,6 +28,18 @@ const nextConfig: NextConfig = {
         port: '',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'nft-cdn.alchemy.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'n1create.pages.dev',
+        port: '',
+        pathname: '/**',
+      },
     ],
   },
   webpack: (config) => {
