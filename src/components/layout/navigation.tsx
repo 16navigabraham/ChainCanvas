@@ -5,7 +5,8 @@ import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { href: '/', label: 'My NFTs' },
+  { href: '/gallery', label: 'My NFTs' },
+  { href: '/mint', label: 'Mint NFT' },
 ];
 
 export function Navigation() {
