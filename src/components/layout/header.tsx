@@ -14,7 +14,6 @@ export function Header() {
             </Link>
             <Navigation />
           </div>
-          <appkit-button />
         </div>
       </div>
     </header>
